@@ -20,13 +20,18 @@ fun main() {
         error(e.message.toString())
     }
     println("\nShared field definitions in Dictionary file $fileName:")
-    xmel.sharedFields.forEach { f ->
-        if (f.usage == 0) {
-            println("${f.id} is never used")
-        } else if (f.usage == 1) {
-            println("${f.id} is used only once")
-        } else {
-            println("${f.id} is used ${f.usage} times")
+    val shared = xmel.getSharedFields()
+    if (shared != null) {
+        shared.forEach { f ->
+            if (f.usage == 0) {
+                println("${f.id} is never used")
+            } else if (f.usage == 1) {
+                println("${f.id} is used only once")
+            } else {
+                println("${f.id} is used ${f.usage} times")
+            }
         }
+    } else {
+        println("no shared field definitions found")
     }
 }
