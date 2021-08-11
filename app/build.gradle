@@ -1,0 +1,12 @@
+plugins {
+    id 'net.x320.xmel.kotlin-application-conventions'
+}
+
+dependencies {
+    implementation 'org.apache.commons:commons-text'
+    implementation project(':utilities')
+}
+
+application {
+    mainClass = 'net.x320.xmel.app.Main'
+}

@@ -1,0 +1,7 @@
+/*
+ * configuring a multi-project build
+ * https://docs.gradle.org/7.1.1/userguide/multi_project_builds.html
+ */
+
+rootProject.name = 'xmel'
+include('app', 'list', 'utilities')
